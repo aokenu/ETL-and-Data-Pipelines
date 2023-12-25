@@ -1,0 +1,16 @@
+[2023-12-01T00:48:18.196+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_toll_data.extract_data_from_fixed_width manual__2023-12-01T00:43:09.112331+00:00 [queued]>
+[2023-12-01T00:48:18.213+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_toll_data.extract_data_from_fixed_width manual__2023-12-01T00:43:09.112331+00:00 [queued]>
+[2023-12-01T00:48:18.214+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-01T00:48:18.239+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): extract_data_from_fixed_width> on 2023-12-01 00:43:09.112331+00:00
+[2023-12-01T00:48:18.254+0000] {standard_task_runner.py:57} INFO - Started process 2720 to run task
+[2023-12-01T00:48:18.260+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_toll_data', 'extract_data_from_fixed_width', 'manual__2023-12-01T00:43:09.112331+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/ETL_toll_data.py', '--cfg-path', '/tmp/tmpm0dzwubc']
+[2023-12-01T00:48:18.262+0000] {standard_task_runner.py:85} INFO - Job 32: Subtask extract_data_from_fixed_width
+[2023-12-01T00:48:18.412+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_toll_data.extract_data_from_fixed_width manual__2023-12-01T00:43:09.112331+00:00 [running]> on host 227737b5950b
+[2023-12-01T00:48:18.573+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chibuikeokenu@gmail.com' AIRFLOW_CTX_DAG_OWNER='Golstine' AIRFLOW_CTX_DAG_ID='ETL_toll_data' AIRFLOW_CTX_TASK_ID='extract_data_from_fixed_width' AIRFLOW_CTX_EXECUTION_DATE='2023-12-01T00:43:09.112331+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-01T00:43:09.112331+00:00'
+[2023-12-01T00:48:18.574+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-01T00:48:18.575+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cut -d" " -f6,7 /opt/***/logs/payment-data.txt > /opt/***/logs/fixed_width_data.csv']
+[2023-12-01T00:48:18.609+0000] {subprocess.py:86} INFO - Output:
+[2023-12-01T00:48:18.640+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-01T00:48:18.696+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL_toll_data, task_id=extract_data_from_fixed_width, execution_date=20231201T004309, start_date=20231201T004818, end_date=20231201T004818
+[2023-12-01T00:48:18.752+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-01T00:48:18.816+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

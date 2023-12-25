@@ -1,0 +1,16 @@
+[2023-12-02T00:00:04.142+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_toll_data.extract_data_from_csv scheduled__2023-12-01T00:00:00+00:00 [queued]>
+[2023-12-02T00:00:04.158+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_toll_data.extract_data_from_csv scheduled__2023-12-01T00:00:00+00:00 [queued]>
+[2023-12-02T00:00:04.159+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-02T00:00:04.181+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): extract_data_from_csv> on 2023-12-01 00:00:00+00:00
+[2023-12-02T00:00:04.194+0000] {standard_task_runner.py:57} INFO - Started process 20158 to run task
+[2023-12-02T00:00:04.200+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_toll_data', 'extract_data_from_csv', 'scheduled__2023-12-01T00:00:00+00:00', '--job-id', '131', '--raw', '--subdir', 'DAGS_FOLDER/ETL_toll_data.py', '--cfg-path', '/tmp/tmp7heoy4fv']
+[2023-12-02T00:00:04.201+0000] {standard_task_runner.py:85} INFO - Job 131: Subtask extract_data_from_csv
+[2023-12-02T00:00:04.292+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_toll_data.extract_data_from_csv scheduled__2023-12-01T00:00:00+00:00 [running]> on host 227737b5950b
+[2023-12-02T00:00:04.428+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chibuikeokenu@gmail.com' AIRFLOW_CTX_DAG_OWNER='Golstine' AIRFLOW_CTX_DAG_ID='ETL_toll_data' AIRFLOW_CTX_TASK_ID='extract_data_from_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-12-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-01T00:00:00+00:00'
+[2023-12-02T00:00:04.430+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-02T00:00:04.432+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cut -d","  -f1,2,3,4 /opt/***/logs/vehicle-data.csv > /opt/***/logs/csv_data.csv']
+[2023-12-02T00:00:04.462+0000] {subprocess.py:86} INFO - Output:
+[2023-12-02T00:00:04.480+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-02T00:00:04.526+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL_toll_data, task_id=extract_data_from_csv, execution_date=20231201T000000, start_date=20231202T000004, end_date=20231202T000004
+[2023-12-02T00:00:04.597+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-02T00:00:04.639+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

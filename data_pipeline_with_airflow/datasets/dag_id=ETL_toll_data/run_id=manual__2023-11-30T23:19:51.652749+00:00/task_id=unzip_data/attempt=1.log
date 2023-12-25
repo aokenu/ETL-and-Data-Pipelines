@@ -1,0 +1,19 @@
+[2023-11-30T23:19:56.476+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_toll_data.unzip_data manual__2023-11-30T23:19:51.652749+00:00 [queued]>
+[2023-11-30T23:19:56.594+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_toll_data.unzip_data manual__2023-11-30T23:19:51.652749+00:00 [queued]>
+[2023-11-30T23:19:56.594+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-30T23:19:56.691+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): unzip_data> on 2023-11-30 23:19:51.652749+00:00
+[2023-11-30T23:19:56.707+0000] {standard_task_runner.py:57} INFO - Started process 1593 to run task
+[2023-11-30T23:19:56.715+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_toll_data', 'unzip_data', 'manual__2023-11-30T23:19:51.652749+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/ETL_toll_data.py', '--cfg-path', '/tmp/tmphotkxppf']
+[2023-11-30T23:19:56.719+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask unzip_data
+[2023-11-30T23:19:56.987+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_toll_data.unzip_data manual__2023-11-30T23:19:51.652749+00:00 [running]> on host 227737b5950b
+[2023-11-30T23:19:57.375+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chibuikeokenu@gmail.com' AIRFLOW_CTX_DAG_OWNER='Golstine' AIRFLOW_CTX_DAG_ID='ETL_toll_data' AIRFLOW_CTX_TASK_ID='unzip_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-30T23:19:51.652749+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-30T23:19:51.652749+00:00'
+[2023-11-30T23:19:57.380+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-30T23:19:57.388+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'ls -l /opt/***/logs/scheduler']
+[2023-11-30T23:19:57.431+0000] {subprocess.py:86} INFO - Output:
+[2023-11-30T23:19:57.442+0000] {subprocess.py:93} INFO - total 4
+[2023-11-30T23:19:57.443+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 *** root 4096 Nov 30 21:54 2023-11-30
+[2023-11-30T23:19:57.443+0000] {subprocess.py:93} INFO - lrwxrwxrwx 1 *** root   38 Nov 30 21:34 latest -> /opt/***/logs/scheduler/2023-11-30
+[2023-11-30T23:19:57.444+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-30T23:19:57.534+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL_toll_data, task_id=unzip_data, execution_date=20231130T231951, start_date=20231130T231956, end_date=20231130T231957
+[2023-11-30T23:19:57.685+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-30T23:19:57.747+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

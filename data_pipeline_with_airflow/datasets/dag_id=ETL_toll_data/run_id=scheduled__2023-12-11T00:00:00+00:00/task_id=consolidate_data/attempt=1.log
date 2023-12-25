@@ -1,0 +1,16 @@
+[2023-12-12T00:00:08.800+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_toll_data.consolidate_data scheduled__2023-12-11T00:00:00+00:00 [queued]>
+[2023-12-12T00:00:08.814+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_toll_data.consolidate_data scheduled__2023-12-11T00:00:00+00:00 [queued]>
+[2023-12-12T00:00:08.815+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-12T00:00:08.832+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): consolidate_data> on 2023-12-11 00:00:00+00:00
+[2023-12-12T00:00:08.840+0000] {standard_task_runner.py:57} INFO - Started process 8664 to run task
+[2023-12-12T00:00:08.844+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_toll_data', 'consolidate_data', 'scheduled__2023-12-11T00:00:00+00:00', '--job-id', '218', '--raw', '--subdir', 'DAGS_FOLDER/ETL_toll_data.py', '--cfg-path', '/tmp/tmpj7py76jq']
+[2023-12-12T00:00:08.845+0000] {standard_task_runner.py:85} INFO - Job 218: Subtask consolidate_data
+[2023-12-12T00:00:08.917+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_toll_data.consolidate_data scheduled__2023-12-11T00:00:00+00:00 [running]> on host 227737b5950b
+[2023-12-12T00:00:09.038+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chibuikeokenu@gmail.com' AIRFLOW_CTX_DAG_OWNER='Golstine' AIRFLOW_CTX_DAG_ID='ETL_toll_data' AIRFLOW_CTX_TASK_ID='consolidate_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-11T00:00:00+00:00'
+[2023-12-12T00:00:09.039+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-12T00:00:09.039+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'paste /opt/***/logs/csv_data.csv /opt/***/logs/tsv_data.csv /opt/***/logs/fixed_width_data.csv > /opt/***/logs/extracted_data.csv']
+[2023-12-12T00:00:09.062+0000] {subprocess.py:86} INFO - Output:
+[2023-12-12T00:00:09.078+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-12T00:00:09.131+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL_toll_data, task_id=consolidate_data, execution_date=20231211T000000, start_date=20231212T000008, end_date=20231212T000009
+[2023-12-12T00:00:09.188+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-12T00:00:09.224+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

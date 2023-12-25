@@ -1,0 +1,24 @@
+[2023-12-01T00:48:23.571+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_toll_data.transform_data manual__2023-12-01T00:43:09.112331+00:00 [queued]>
+[2023-12-01T00:48:23.587+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_toll_data.transform_data manual__2023-12-01T00:43:09.112331+00:00 [queued]>
+[2023-12-01T00:48:23.587+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-01T00:48:23.607+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data> on 2023-12-01 00:43:09.112331+00:00
+[2023-12-01T00:48:23.618+0000] {standard_task_runner.py:57} INFO - Started process 2736 to run task
+[2023-12-01T00:48:23.629+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_toll_data', 'transform_data', 'manual__2023-12-01T00:43:09.112331+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/ETL_toll_data.py', '--cfg-path', '/tmp/tmpvgq94d3z']
+[2023-12-01T00:48:23.630+0000] {standard_task_runner.py:85} INFO - Job 34: Subtask transform_data
+[2023-12-01T00:48:23.813+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_toll_data.transform_data manual__2023-12-01T00:43:09.112331+00:00 [running]> on host 227737b5950b
+[2023-12-01T00:48:24.014+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chibuikeokenu@gmail.com' AIRFLOW_CTX_DAG_OWNER='Golstine' AIRFLOW_CTX_DAG_ID='ETL_toll_data' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-01T00:43:09.112331+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-01T00:43:09.112331+00:00'
+[2023-12-01T00:48:24.016+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-01T00:48:24.018+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'awk -F"," { print $1","$2","$3","toupper($4)","$5","$6","$7","$8","$9; } < /opt/***/logs/extracted_data.cv > /opt/***/logs/transformed_data.csv']
+[2023-12-01T00:48:24.079+0000] {subprocess.py:86} INFO - Output:
+[2023-12-01T00:48:24.089+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 1: syntax error near unexpected token `('
+[2023-12-01T00:48:24.089+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 1: `awk -F"," { print $1","$2","$3","toupper($4)","$5","$6","$7","$8","$9; } < /opt/***/logs/extracted_data.cv > /opt/***/logs/transformed_data.csv'
+[2023-12-01T00:48:24.090+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-12-01T00:48:24.119+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-12-01T00:48:24.128+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_toll_data, task_id=transform_data, execution_date=20231201T004309, start_date=20231201T004823, end_date=20231201T004824
+[2023-12-01T00:48:24.179+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 34 for task transform_data (Bash command failed. The command returned a non-zero exit code 2.; 2736)
+[2023-12-01T00:48:24.196+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-01T00:48:24.251+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
